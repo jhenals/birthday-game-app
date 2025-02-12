@@ -1,5 +1,5 @@
 {
-  "name": "3dfolio",
+  "name": "jhenals",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,6 +19,8 @@
     "react-router-dom": "^6.8.1",
     "react-tilt": "^0.1.4",
     "react-vertical-timeline-component": "^3.6.0",
+    "styled-components": "^6.1.15",
+    "swiper": "^11.2.2",
     "three": "^0.149.0"
   },
   "devDependencies": {

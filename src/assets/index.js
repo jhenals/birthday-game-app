@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import jhenals from "./jnls.svg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -25,13 +25,14 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import southtours from "./company/southtours.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 
 export {
-  logo,
+  jhenals,
   backend,
   creator,
   mobile,
@@ -56,6 +57,7 @@ export {
   shopify,
   starbucks,
   tesla,
+  southtours,
   carrent,
   jobit,
   tripguide,

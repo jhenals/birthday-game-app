@@ -19,11 +19,13 @@ import {
   starbucks,
   tesla,
   shopify,
+  southtours,
   carrent,
   jobit,
   tripguide,
   threejs,
 } from "../assets";
+import BookJournal from "../components/exploring_further/BookJournal";
 
 export const navLinks = [
   {
@@ -31,8 +33,12 @@ export const navLinks = [
     title: "About",
   },
   {
-    id: "work",
-    title: "Work",
+    id: "projects",
+    title: "Projects",
+  },
+  {
+    id: "exploringfurther",
+    title: "Exploring Further",
   },
   {
     id: "contact",
@@ -81,10 +87,6 @@ const technologies = [
     icon: reactjs,
   },
   {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
     name: "Tailwind CSS",
     icon: tailwind,
   },
@@ -116,24 +118,28 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Web Developer Intern",
+    company_name: "South Tours",
+    icon: southtours,
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Jul 2023 - Sep 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Collaborated with the company’s development team to design, develop, and implement a web application aimed at allowing users to discover, recommend,and purchase various products based ontheir interests and buying preferences.",
+      "Implemented HTTP calls in PHP for userregistration and authentication, as well as for requesting data from the web server.",
+      "Utilized the following technologies and tools:",
+      "– Backend: PHP,",
+      "– Frontend: ReactJS",
+      "– Database: MySQL",
+      "– Libraries and frameworks: MUI, Bootstrap",
+      "– others: HTML5,CSS,Javascript, XAMPP, Github, Git.",
     ],
   },
-  {
+  /* {
     title: "React Native Developer",
     company_name: "Tesla",
     icon: tesla,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jul 2023 - Sep 2023",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -166,6 +172,29 @@ const experiences = [
       "Implementing responsive design and ensuring cross-browser compatibility.",
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
+  }, */
+];
+
+const exploringfurther = [
+  {
+    title: "Book Journal",
+    about:
+      "A personal collection of thoughts, reflections, and reviews on the books I’ve read. It’s a space where literature meets introspection.",
+  },
+  {
+    title: "Blogs",
+    about:
+      "A collection of articles and posts on various topics, ranging from programming and technology to personal musings and experiences.",
+  },
+  {
+    title: "Poetry",
+    about:
+      "A creative space where I share my poems, inspired by thoughts, feelings, and moments of inspiration from everyday life.",
+  },
+  {
+    title: "Little Gallery",
+    about:
+      "A visual showcase of my artwork and creative designs, featuring pieces that reflect my artistic journey and passion for expression.",
   },
 ];
 
@@ -262,4 +291,11 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export {
+  services,
+  technologies,
+  experiences,
+  testimonials,
+  exploringfurther,
+  projects,
+};
