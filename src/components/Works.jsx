@@ -11,11 +11,10 @@ import styled from "styled-components";
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
+import { projects, uniprojects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ProjectCard = ({
-  index,
   name,
   description,
   tags,
@@ -47,7 +46,7 @@ const ProjectCard = ({
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
+          <p className='mt-2 text-secondary text-[14px] line-clamp-3 '>{description}</p>
         </div>
 
         <div className='mt-4 flex flex-wrap gap-2'>
@@ -64,7 +63,7 @@ const ProjectCard = ({
   );
 };
 
-const ProjectCarousel=()=>{
+const ProjectCarousel=({projs})=>{
   return (
     <CarouselContainer>
       <Swiper
@@ -81,7 +80,7 @@ const ProjectCarousel=()=>{
           slideShadows: true,
         }}
         modules={[EffectCoverflow]}>
-        {projects.map((project, index) => (
+        {projs.map((project, index) => (
           <SwiperSlide key={`project-${index}`}>
             <ProjectCard index={index} {...project} />
           </SwiperSlide>
@@ -141,11 +140,11 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <p className={`${styles.sectionSubSubText} mt-10`}>University Projects:</p>
-      <ProjectCarousel/>
+     {/*  <p className={`${styles.sectionSubSubText} mt-10`}>University Projects:</p> */}
+      <ProjectCarousel projs={projects}/>
 
-      <p className={`${styles.sectionSubSubText} mt-10 `}>Personal Projects:</p>
-      <ProjectCarousel/>
+      {/* <p className={`${styles.sectionSubSubText} mt-10 `}>Personal Projects:</p> */}
+      <ProjectCarousel projs={uniprojects}/>
     </>
   );
 };

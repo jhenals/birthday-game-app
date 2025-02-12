@@ -20,7 +20,7 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
           — brewing Code, Art and Ideas  <br className='sm:block hidden' />
-           among the stars{'\u{1F680}'}{'\u{1F4AB}'}
+           under the stars{'\u{1F680}'}{'\u{1F4AB}'}
           </p>
         </div>
 
