@@ -18,6 +18,7 @@ import {
 } from "../assets";
 
 import { projects, uniprojects } from "./projects";
+import accounts from "./socmeds";
 
 export const navLinks = [
   {
@@ -158,4 +159,5 @@ export {
   exploringfurther,
   projects,
   uniprojects,
+  accounts,
 };

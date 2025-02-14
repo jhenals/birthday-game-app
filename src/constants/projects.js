@@ -32,7 +32,8 @@ const projects = [
       },
     ],
     image: dentalpractice,
-    source_code_link: "https://github.com/jhenals/nodeexpress-mongodb-docker",
+    source_code_link:
+      "https://github.com/jhenals/employee-management-system-nodeexpress-mongodb-docker",
   },
   {
     name: "Job IT",

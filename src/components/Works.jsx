@@ -46,9 +46,15 @@ const ProjectCard = ({
 
         <div className='mt-5'>
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px] line-clamp-3 '>{description}</p>
+          <p className='mt-2 text-secondary text-[14px] line-clamp-3 group-hover:line-clamp-none group-hover:absolute group-hover:bg-black group-hover:text-white group-hover:p-2 group-hover:rounded-lg group-hover:w-full group-hover:top-0 '>
+            {description}
+          </p>
         </div>
 
+        {/* TODO: When hovering over the project card, the tags and whole description should be 
+            displayed in a row below the description.
+        */}
+        
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (
             <p
@@ -134,9 +140,7 @@ const Works = () => {
         >
           The projects featured here showcase my skills and practical experience, 
           including both personal and university-related work. Each project is accompanied 
-          by a brief description, along with links to the source code and live demos. 
-          These examples reflect my ability to solve complex problems, work with various technologies, 
-          and manage projects from start to finish, both in academic settings and real-world applications.
+          by a brief description, along with links to the source code (and live demos).
         </motion.p>
       </div>
 

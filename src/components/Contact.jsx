@@ -6,6 +6,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import SocialMediaAcc from "./SocialMediaAcc";
 
 const Contact = () => {
   const formRef = useRef();
@@ -37,9 +38,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "JavaScript Mastery",
+          to_name: "Jhenalyn Subol ",
           from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
+          to_email: "suboljhenalyn3@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -123,12 +124,16 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
-      >
-        <EarthCanvas />
-      </motion.div>
+      <div className=' flex-1 flex flex-col gap-10'>
+        <motion.div
+          variants={slideIn("right", "tween", 0.2, 1)}
+          className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
+        >
+          <EarthCanvas />
+        </motion.div>
+        
+        <SocialMediaAcc /> 
+      </div>
     </div>
   );
 };
