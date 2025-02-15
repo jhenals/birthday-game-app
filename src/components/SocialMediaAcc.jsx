@@ -5,26 +5,26 @@ import { styles } from "../styles";
 import { accounts } from "../constants";
 import { slideIn } from "../utils/motion";
 
-const SocMedCards = ({ name, link, icon, index }) => {
+const SocMedCards = ({ name, url, icon, index }) => {
   return (
     <motion.div
     variants={slideIn("up", "tween", index * 0.2, 1)}
-   
+    className="flex flex-col items-center"
   >
-     <a
-        href={link}
-        target='_blank'
-        rel='noopener noreferrer'
-        className='shadow-sm text-white font-black bg-black-200 p-10 rounded-full xs:w-[100px] text-[20px] cursor-pointer'
-      >
-        {icon}
-      </a> 
-
-      <div className='mt-1'>
-        <p className='text-white text-center tracking-wider text-[5px]'>
-          {name}
-        </p>
-      </div>
+      <a
+    href={url}
+    target='_blank'
+    rel='noopener noreferrer'
+    className=" bg-tertiary rounded-full w-[70px] h-[70px] flex justify-center items-center cursor-pointer"
+  >
+    
+     <i className={`fa-brands ${icon} text-[30px] text-white `}/>  
+  </a> 
+  <div className="mt-2">
+    <p className="text-white text-center tracking-wider text-xs">
+      {name}
+    </p>
+  </div>
   </motion.div>
     
   )
@@ -41,9 +41,9 @@ const SocialMediaAcc = () => {
         <h3 className={styles.sectionHeadText}>Social Links.</h3>
       </motion.div>
       
-      <div className={`relative mt-10 pb-14 flex flex-row flex-wrap gap-7`}>
+      <div className={`mt-10 pb-14 flex flex-row flex-wrap gap-7`}>
         {accounts.map((acc, index) => (
-          <SocMedCards key={acc.title} index={index} {...acc} />
+          <SocMedCards key={acc.name} index={index} {...acc} />
         ))}
       </div>
 

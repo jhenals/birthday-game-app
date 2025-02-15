@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 
 import { About, Contact, Experience, ExploringFurther, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const App = () => {
   return (
