@@ -1,10 +1,11 @@
 import React from 'react'
+import { styles } from '../../styles'
 
 const BookJournal = () => {
   return (
-    <div>
-      BookJournal
-    </div>
+    <div className={styles.subSectionDiv}>
+      Book Journal
+  </div>
   )
 }
 

@@ -1,13 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";  
 
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { exploringfurther } from "../constants";
+import { Blogs, } from "./exploring_further";
 
 const FeedbackCard = ({
   index,
+  name,
   title,
   about,
 }) => (
@@ -18,8 +21,14 @@ const FeedbackCard = ({
     <p className='text-white font-black text-[48px]'></p>
 
     <div className='mt-1'>
-      <p className='text-white text-center tracking-wider cursor-pointer text-[48px]'>{title}</p>
-
+      <nav>
+        <Link 
+          to={`${name}`}
+          className='text-white text-center tracking-wider cursor-pointer text-[48px]'>
+            {title}
+        </Link>
+      </nav>
+      
       <div className='mt-7 flex justify-between items-center gap-1'>
         <div className='flex-1 flex flex-col'>
           <p className='text-white font-light text-justify text-[12px]'>

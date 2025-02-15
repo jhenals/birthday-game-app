@@ -2,12 +2,12 @@ import React from 'react'
 
 import { styles } from '../../styles'
 
-const LittleGallery = () => {
+const Poetry = () => {
   return (
     <div className={styles.subSectionDiv}>
-      Little Gallery
+      Poetry
     </div>
   )
 }
 
-export default LittleGallery
+export default Poetry

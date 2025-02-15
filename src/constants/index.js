@@ -131,21 +131,25 @@ const experiences = [
 
 const exploringfurther = [
   {
+    name: "bookjournal",
     title: "Book Journal",
     about:
       "A personal collection of thoughts, reflections, and reviews on the books I’ve read. It’s a space where literature meets introspection.",
   },
   {
+    name: "blogs",
     title: "Blogs",
     about:
       "A collection of articles and posts on various topics, ranging from programming and technology to personal musings and experiences.",
   },
   {
+    name: "poetry",
     title: "Poetry",
     about:
       "A creative space where I share my poems, inspired by thoughts, feelings, and moments of inspiration from everyday life.",
   },
   {
+    name: "littlegallery",
     title: "Little Gallery",
     about:
       "A visual showcase of my artwork and creative designs, featuring pieces that reflect my artistic journey and passion for expression.",
