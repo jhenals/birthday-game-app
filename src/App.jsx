@@ -3,13 +3,13 @@ import { Routes, Route } from "react-router-dom";
 
 import { About, Contact, Experience, ExploringFurther, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { Blogs, BookJournal, LittleGallery ,Poetry} from "./components/exploring_further";
+import { Blogs, BookJournal, LittleGallery ,Poetry,} from "./components/exploring_further";
 
 const App = () => {
   return (
     <>
     <BrowserRouter>
-    <div className="relative">
+        <div className='fixed w-full z-50'>
             <Navbar /> 
           </div>
       <div className='relative z-0 bg-primary'>
