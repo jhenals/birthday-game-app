@@ -14,8 +14,6 @@ import ExploringFurther from "./ExploringFurther";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 
-import { Blogs, BookJournal, LittleGallery, Poetry } from "./exploring_further";
-
 export {
   Hero,
   Navbar,
@@ -30,8 +28,4 @@ export {
   BallCanvas,
   ComputersCanvas,
   StarsCanvas,
-  Blogs,
-  BookJournal,
-  LittleGallery,
-  Poetry,
 };

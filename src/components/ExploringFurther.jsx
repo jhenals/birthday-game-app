@@ -6,11 +6,10 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import { exploringfurther } from "../constants";
-import { Blogs, } from "./exploring_further";
 
 const FeedbackCard = ({
   index,
-  name,
+  link,
   title,
   about,
 }) => (
@@ -22,11 +21,14 @@ const FeedbackCard = ({
 
     <div className='mt-1'>
       <nav>
-        <Link 
-          to={`${name}`}
-          className='text-white text-center tracking-wider cursor-pointer text-[48px]'>
-            {title}
-        </Link>
+      <a 
+        href={link} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className='text-white text-center tracking-wider cursor-pointer text-[48px]'>
+        {title}
+      </a>
+
       </nav>
       
       <div className='mt-7 flex justify-between items-center gap-1'>

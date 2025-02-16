@@ -135,6 +135,7 @@ const exploringfurther = [
     title: "Book Journal",
     about:
       "A personal collection of thoughts, reflections, and reviews on the books I’ve read. It’s a space where literature meets introspection.",
+    link: "https://medium.com/@jhenalsbl",
   },
   {
     name: "blogs",

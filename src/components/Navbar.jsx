@@ -13,7 +13,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleNavigation = (path, sectionId = '') => {
+  const handleNavigation = ( sectionId = '') => {
     if(location.pathname === "/"){
       window.history.pushState({}, `/#${sectionId}`);
       const section=document.getElementById(sectionId);
@@ -70,24 +70,16 @@ const Navbar = () => {
 
         <ul className='list-none hidden sm:flex flex-row gap-10'>
           {navLinks.map((nav) => (
-          <button
-            key={nav.id}
-            className={`${
-              active === nav.title ? "text-white" : "text-secondary"
-            } hover:text-white text-[18px] font-medium cursor-pointer`}
-        
-            onClick={() =>{
-              setActive(nav.title);
-              nav.id === 'about'
-              ? handleNavigation('/', 'about') // Scroll to About section on the homepage
-              : handleNavigation('/',`${nav.id}`) // Normal navigation
-              }  
-            }
-          >
-            {nav.title}
-          </button>
+            <li
+              key={nav.id}
+              className={`${
+                active === nav.title ? "text-white" : "text-secondary"
+              } hover:text-white text-[18px] font-medium cursor-pointer`}
+              onClick={() => setActive(nav.title)}
+            >
+              <a href={`#${nav.id}`}>{nav.title}</a>
+            </li>
           ))}
-
         </ul>
 
 
@@ -106,28 +98,20 @@ const Navbar = () => {
           >
             <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
               {navLinks.map((nav) => (
-              <button
-                key={nav.id}
-                className={`${
-                  active === nav.title ? "text-white" : "text-secondary"
-                } hover:text-white text-[18px] font-medium cursor-pointer`}
-            
-                onClick={() =>{
-                  setToggle(!toggle);
-                  setActive(nav.title);
-                  nav.id === 'about'
-                    ? handleNavigation('/', 'about') // Scroll to About section on the homepage
-                    : handleNavigation('/',`${nav.id}`) // Normal navigation
-
-                }
-          
-                }
-              >
-                {nav.title}
-              </button>
+                <li
+                  key={nav.id}
+                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                    active === nav.title ? "text-white" : "text-secondary"
+                  }`}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    setActive(nav.title);
+                  }}
+                >
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                </li>
               ))}
             </ul>
-
           </div>
         </div>
       </div>
