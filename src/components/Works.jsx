@@ -22,8 +22,9 @@ const ProjectCard = ({
   source_code_link,
 }) => {
   return (
-    <motion.div className='w-[300px] h-[450px] bg-[#1d1836] rounded-2xl p-3'>
-      <div className='relative w-full h-[230px]'>
+    <motion.div className='w-[300px] h-[450px] rounded-[20px] p-[1px] shadow-card green-pink-gradient'>
+      <div className="bg-[#1d1836] rounded-[20px] p-2 h-full ">
+        <div className='relative  w-full h-[230px]'>
           <img
             src={image}
             alt='project_image'
@@ -65,6 +66,9 @@ const ProjectCard = ({
             </p>
           ))}
         </div>
+        
+      </div>
+      
     </motion.div>
   );
 };
@@ -103,7 +107,6 @@ const CarouselContainer= styled.div`
   align-items: center;
   .swiper .swiper-slide{
     background-positions: center;
-    background-color: #1d1836;
     width: 300px;
     height: 450px;
     border-radius: 10px;

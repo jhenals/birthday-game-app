@@ -56,11 +56,11 @@ const About = () => {
         is what makes programming so fulfilling, and I’m constantly driven by a desire to learn, create, and share my work with others.
       </motion.p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
+      {/* <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
-      </div>
+      </div> */}
     </>
   );
 };
