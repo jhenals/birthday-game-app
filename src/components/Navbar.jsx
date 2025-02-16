@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link , useLocation, useNavigate } from "react-router-dom";
+import { Link , } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -9,25 +9,6 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  const handleNavigation = ( sectionId = '') => {
-    if(location.pathname === "/"){
-      window.history.pushState({}, `/#${sectionId}`);
-      const section=document.getElementById(sectionId);
-      if(section) section.scrollIntoView({behavior:'smooth'});
-      navigate(`/#${sectionId}`);
-    }
-    else{
-      navigate(`/#${sectionId}`);
-      setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        if (section) section.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
