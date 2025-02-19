@@ -20,7 +20,8 @@ const ProjectCardCarousel = ({
   source_code_link,
 }) => {
   return (
-    <motion.div className='w-[300px] h-[400px] rounded-[20px] p-[1px] shadow-card green-pink-gradient'>
+    <motion.div 
+      className='w-[300px] h-[400px] rounded-[20px] p-[1px] shadow-card green-pink-gradient'>
       <div className="bg-[#1d1836] rounded-[20px] p-2 h-full ">
         <div className='relative w-full h-[230px]'>
           <img
@@ -208,9 +209,11 @@ const Works = () => {
 
       <div className="flex justify-center flex-col items-center mt-10">
          {/*Highlighted Projects  */}
-         <div className="hidden xs:block">
-          <ProjectCarousel projs={highlightedProjects} />
-         </div>
+         <motion.div 
+            variants={fadeIn("left", "spring",0.2, 1)}
+            className="hidden xs:block">
+              <ProjectCarousel projs={highlightedProjects} />
+         </motion.div>
        
 
 

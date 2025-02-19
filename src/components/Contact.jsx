@@ -126,6 +126,8 @@ const Contact = () => {
       </motion.div>
 
       <div className=' xl:w-[500px] flex-1 flex flex-col gap-10'>
+        <SocialMediaAcc /> 
+        
         <motion.div
           variants={slideIn("right", "tween", 0.2, 1)}
           className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
@@ -133,7 +135,7 @@ const Contact = () => {
           <EarthCanvas />
         </motion.div>
         
-        <SocialMediaAcc /> 
+        
       </div>
     </div>
   );
