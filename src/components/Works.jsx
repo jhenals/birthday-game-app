@@ -47,10 +47,6 @@ const ProjectCardCarousel = ({
           <h3 className='text-white font-bold text-[24px]'>{name}</h3>
          
         </div>
-
-        {/* TODO: When hovering over the project card, the tags and whole description should be 
-            displayed in a row below the description.
-        */}
         
         <div className='mt-4 flex flex-wrap gap-2'>
           {tags.map((tag) => (

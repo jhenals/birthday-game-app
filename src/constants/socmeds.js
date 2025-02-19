@@ -16,7 +16,7 @@ const accounts = [
   },
   {
     name: "medium",
-    url: "https://www.linkedin.com/in/jhenalyn-subol-491621200/",
+    url: "https://medium.com/@suboljhenalyn3",
     icon: "fa-medium",
   },
 ];

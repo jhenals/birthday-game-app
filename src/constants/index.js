@@ -140,19 +140,19 @@ const exploringfurther = [
     title: "Blogs",
     about:
       "A collection of articles and posts on various topics, ranging from programming and technology to personal musings and experiences.",
-    link: "",
+    link: "https://medium.com/@suboljhenalyn3",
   },
   {
     title: "Poetry",
     about:
       "A creative space where I share my poems, inspired by thoughts, feelings, and moments of inspiration from everyday life.",
-    link: "",
+    link: "https://allpoetry.com/Jhenals",
   },
   {
     title: "Little Gallery",
     about:
-      "A visual showcase of my artwork and creative designs, featuring pieces that reflect my artistic journey and passion for expression.",
-    link: "",
+      "A small collection of moments captured through my lens—fragments of light, color, and memory. Each picture holds a quiet story, a fleeting thought, or a simple beauty that caught my eye.",
+    link: "https://www.instagram.com/jhenalsbl/",
   },
 ];
 
