@@ -32,7 +32,9 @@ const SocMedCards = ({ name, url, icon, index }) => {
 
 const SocialMediaAcc = () => {
   return (
-    <div className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
+    <motion.div 
+      variants={slideIn("up", "tween", 0.2, 1)}
+      className='flex-[0.75] bg-black-100 p-8 rounded-2xl'>
       <motion.div
         variants={slideIn("up", "tween", 0.2, 1)}
         className='flex flex-col'
@@ -48,7 +50,7 @@ const SocialMediaAcc = () => {
       </div>
 
      
-    </div>
+    </motion.div>
   )
 }
 

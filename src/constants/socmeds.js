@@ -19,6 +19,11 @@ const accounts = [
     url: "https://medium.com/@suboljhenalyn3",
     icon: "fa-medium",
   },
+  {
+    name: "CV",
+    url: "https://drive.google.com/file/d/162SO9HfKaQmsCl00Dwec2oMfbAY8D16B/view?usp=sharing",
+    icon: "fa-file",
+  },
 ];
 
 export default accounts;
