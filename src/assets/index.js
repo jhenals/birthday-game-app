@@ -22,15 +22,8 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import java from "./tech/java.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
 import southtours from "./company/southtours.png";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
 import { bookhaven, minicad, poly, arith, dentalpractice } from "./projects";
 
 export {
@@ -56,14 +49,7 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
   southtours,
-  carrent,
-  jobit,
-  tripguide,
   bookhaven,
   minicad,
   poly,
