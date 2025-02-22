@@ -11,6 +11,9 @@
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+  max-width: 360px;
+  height: 100vh;
+
 }
 
 .hash-span {
