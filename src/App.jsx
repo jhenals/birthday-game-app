@@ -4,10 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Start from "./components/Start";
-import MainStory from "./components/canvas/MainStory";
+import MainStory from "./components/MainStory";
 
 const App = () => {
-  const [gameStarted, setGameStarted] = useState(false);
+  const [gameStarted, setGameStarted] = useState(true);
 
   const startGame = () => {
     setGameStarted(true);

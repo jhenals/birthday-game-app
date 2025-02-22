@@ -5,12 +5,21 @@ import { motion } from 'framer-motion'
 const Start = ({startGame}) => {
   const [randomPosition, setRandomPosition] = useState({ x: 0, y: 0 });
 
+  const getRandomNumber = (min, max) => { 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
   const generateRandomPosition = () => {
-    const maxX = window.innerWidth-150 ;
-    const maxY = window.innerHeight-60;
+    const maxWidth= window.innerWidth;
+    const maxHeight= window.innerHeight;
+  
+    const randomX =getRandomNumber(-maxWidth, maxWidth);
+    const randomY = getRandomNumber(-maxHeight, maxHeight);
+
+    
     return {
-      x: Math.random() * maxX,
-      y: Math.random() * maxY,
+      x: Math.random() * randomX,
+      y: Math.random() * randomY,
     };
   };
 
@@ -37,7 +46,7 @@ const Start = ({startGame}) => {
 
             type: "spring",
             stiffness: 100,
-            damping: 50
+            damping: 35
           }}
           onClick={ ()=>startGame() }>Click Me!</motion.button>
     </motion.div>
