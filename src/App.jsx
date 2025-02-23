@@ -10,7 +10,7 @@ import Chapter3 from "./components/Chapter3";
 import Gift from "./components/Gift";
 
 const App = () => {
-  const [gameStarted, setGameStarted] = useState(false);
+  const [gameStarted, setGameStarted] = useState(true);
 
   const startGame = () => {
     setGameStarted(true);
@@ -27,7 +27,7 @@ const App = () => {
         <Route
           path="/main"
           element={gameStarted ? <MainStory /> : <Navigate to="/" />}
-        />
+        />        
         <Route path="/chapter-one" element={<Chapter1 />} />
         <Route path="/chapter-two" element={<Chapter2 />} />
         <Route path="/chapter-three" element={<Chapter3 />} />
