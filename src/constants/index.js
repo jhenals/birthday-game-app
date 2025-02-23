@@ -147,4 +147,22 @@ const chapt2images = [
   },
 ];
 
-export { intro, chapters, chap1, chapt2images };
+const audioQuestions = [
+  {
+    audioClip: "",
+    correct: "Dynamite",
+    options: ["Idol", "Butter", "Blood Sweat & Tears", "Dynamite"],
+  },
+  {
+    audioClip: "",
+    correct: "Spring Day",
+    options: ["Boy With Luv", "Spring Day", "Fake Love", "Coffee"],
+  },
+  {
+    audioClip: "",
+    correct: "Life Goes On",
+    options: ["Life Goes On", "Save Me", "Mic Drop", "Not Today"],
+  },
+];
+
+export { intro, chapters, chap1, chapt2images, audioQuestions };
