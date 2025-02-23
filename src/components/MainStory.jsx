@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 
 import { styles } from "../styles";
 import Stars from './canvas/Stars'
-import { SectionWrapper } from "../hoc";
 
 
 const MainStory = () => {
@@ -32,7 +31,7 @@ const MainStory = () => {
 
 
   return (
-    <div className={`${styles.padding} relative `}>
+    <div className={`${styles.padding} bg-primary relative`}>
       {isVisible && (
 			<motion.div
 			className="absolute inset-0 bg-black z-10"
