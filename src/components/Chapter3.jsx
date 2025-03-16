@@ -51,9 +51,9 @@ const Chapter3 = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
             >
-              <h1 className={`${styles.heroSubText} h-[300px] mt-10`}>Chapter 3:</h1>
-              <h2 className={`${styles.heroHeadText} `}>The<br/> Bangtan <br/> Beats <br />🎶</h2>
-              <p className='mt-5 h-full'>Nyka... <br/> listen to the 10second beat <br/> and name that BTS song!</p>
+              <h1 className={`${styles.heroSubText} h-[200px] mt-5`}>Chapter 3:</h1>
+              <h2 className={`${styles.heroHeadText} h-[600px]`}>The<br/> Bangtan <br/> Beats <br />🎶</h2>
+              <p className='mt-5 h-[200px]'>Nyka... <br/> listen to the 10second beat <br/> and name that BTS song!</p>
 
 
               <button

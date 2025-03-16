@@ -66,7 +66,7 @@ const Chapter2 = () => {
             >
               <h1 className={`${styles.heroSubText} h-[600px] mt-10`}>Chapter 2:</h1>
               <h2 className={`${styles.heroHeadText}`}>Permission<br/> to Match <br />🕺💃🎶 </h2>
-              <p>Flip, <br/>Match, <br/> and Prove your ARMY memory skill!</p>
+              <p className='my-10'>Flip, <br/>Match, <br/> and Prove your ARMY memory skill!</p>
 
 
               <button

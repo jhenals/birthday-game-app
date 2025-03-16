@@ -18,9 +18,9 @@ const Gift = () => {
         <a 
           href={videoGift}
           download={videoGift}
-          className= "bottom-0 w-[300px] h-[60px] text-primary font-bold mt-5 text-center underline "
+          className= "bottom-0 w-[300px] h-[60px] text-primary text-xs mt-5 text-center underline "
         >
-            Download Video 🎥
+            👉Download Video 🎥
         </a>
     </motion.div>
   )
