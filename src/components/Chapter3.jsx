@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
-import { audioQuestions } from '../constants'
+import { audioQuestions, wrongAnswers } from '../constants'
 
 const Chapter3 = () => {
   const navigate = useNavigate()  
@@ -11,7 +11,8 @@ const Chapter3 = () => {
   const [introEnd, setIntroEnd] = useState(false)
   const [index, setIndex] = useState(0)
   const [isCorrect, setIsCorrect] = useState(null) 
-  const  [gameSolved, setGameSolved] = useState(false)  
+  const [gameSolved, setGameSolved] = useState(false) 
+  const [clue, setClue]= useState('')   
 
   const handleAnswer = (option) => {
     if(option === audioQuestions[index].correct){
@@ -24,6 +25,9 @@ const Chapter3 = () => {
       }
     } else {
       setIsCorrect(false)
+      const randomClue = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
+      setClue(randomClue)  
+      setTimeout(()=> setClue(''), 3000)
     }
 
     //Play thr video
@@ -97,17 +101,25 @@ const Chapter3 = () => {
             ))}
             </div>
 
-          <div className='h-[200px] w-full p-4'>
-            {isCorrect !== null && (
-              <div className={`mt-4 text-lg font-semibold ${isCorrect ? '' : 'text-red-500'}`}>
-                {isCorrect ? '' : 'Oops! Try again! ❌'}
-              </div>
-            )}
-          </div>
+            <div className='h-[200px] w-full p-4'>
+              { !isCorrect && (
+                <div className=" w-full h-auto">
+                  <p
+                    className="w-full flex flex-wrap text-white text-lg  mb-10"
+                  >
+                    {clue}
+                  </p>
+                </div>
+              )
+              }
+            </div>
           </div>
         </div>
     
       )} 
+
+ 
+
 
       {introEnd && gameSolved && (
         <div className="flex flex-col relative justify-center items-center mt-4 text-white h-[500px]">  

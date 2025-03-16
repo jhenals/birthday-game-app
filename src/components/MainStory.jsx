@@ -20,7 +20,7 @@ const MainStory = () => {
 
 
   return (
-    <div className={`${styles.padding} bg-primary relative  `}>
+    <div className={`${styles.padding} bg-primary relative `}>
       {isVisible && (
 			<motion.div
 			className="absolute inset-0 bg-black z-10"

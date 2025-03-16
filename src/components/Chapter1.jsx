@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
-import {chap1} from '../constants'
+import {chap1, wrongAnswers} from '../constants'
 
 const Chapter1 = () => {
   const navigate = useNavigate();
@@ -11,22 +11,30 @@ const Chapter1 = () => {
   const [index, setIndex] = useState(0);
   const [chapterEnd, setChapterEnd] = useState(false);
   const [introEnd, setIntroEnd] = useState(false);
+  const [clue, setClue]= useState('')  
+  const [isCorrect, setIsCorrect] = useState(false) 
+  
+
   const handleAnswer = (option) => {
     if(chap1[index].correct === option){
+      setClue('')
       setIndex( (prev) => Math.min(prev+1, chap1.length-1))
       if(index === chap1.length-1){
         setChapterEnd(true)
         console.log('end of chapter 1')
       }
     }else{
-      console.log('wrong option')
+      setIsCorrect(false)
+      const randomClue = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
+      setClue(randomClue)  
+      setTimeout(()=> setClue(''), 3000)
     }
   }
 
 
 
   return (
-    <div className={`${styles.padding} bg-primary relative `}>
+    <div className={`${styles.padding} bg-primary relative h-full `}>
       {
         !introEnd && (
           <motion.div
@@ -53,32 +61,46 @@ const Chapter1 = () => {
       }
       
 
-      
       {
         introEnd && !chapterEnd  && (
-          <div className=" z-2 w-full flex flex-col">
-          <motion.div
-            key= {index}
-            className="w-full h-[500px] flex flex-wrap text-white font-bold text-center items-center justify-center"
-          >
-            {chap1[index].question}
-          </motion.div>
-    
-          <div className="flex flex-col gap-4">
-              <button className="bg-secondary h-[100px]" onClick={() => handleAnswer("option_a")}>
-                {chap1[index].option_a}
-              </button>
-              <button className="bg-secondary h-[100px]" onClick={() => handleAnswer("option_b")}>
-                {chap1[index].option_b}
-              </button>
-              <button className="bg-secondary h-[100px]" onClick={() => handleAnswer("option_c")}>
-                {chap1[index].option_c}
-              </button>
-              <button className="bg-secondary h-[100px]" onClick={() => handleAnswer("option_d")}>
-                {chap1[index].option_d}
-              </button>
-          </div>
-        </div>
+          <>
+            <div className=" w-full h-auto flex flex-col">
+              <motion.div
+                key= {index}
+                className="w-full h-[200px] flex flex-wrap text-white font-bold text-center items-center justify-center"
+              >
+                {chap1[index].question}
+              </motion.div>
+      
+              <div className="h-[450px] flex flex-col gap-4">
+                  <button className="bg-secondary h-[100px]" onClick={() => handleAnswer("option_a")}>
+                    {chap1[index].option_a}
+                  </button>
+                  <button className="bg-secondary h-[100px]" onClick={() => handleAnswer("option_b")}>
+                    {chap1[index].option_b}
+                  </button>
+                  <button className="bg-secondary h-[100px]" onClick={() => handleAnswer("option_c")}>
+                    {chap1[index].option_c}
+                  </button>
+                  <button className="bg-secondary h-[100px]" onClick={() => handleAnswer("option_d")}>
+                    {chap1[index].option_d}
+                  </button>
+              </div>
+            </div>
+          
+            <div className='h-[200px] w-full mt-5'>
+              { !isCorrect && (
+                <div className=" w-full h-auto">
+                  <p
+                    className="w-full flex flex-wrap text-white text-lg "
+                  >
+                    {clue}
+                  </p>
+            </div>
+          )
+          }
+            </div>
+          </>
         )
       }
 

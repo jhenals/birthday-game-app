@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles'
-import { chapt2images } from '../constants'
+import { chapt2images , wrongAnswers} from '../constants'
 
 const shuffleArray = (array) => {
   let shuffledArray = [...array];
@@ -40,7 +40,9 @@ const Chapter2 = () => {
         setClue('Great! You found a match')
         setFlipped([])
       }else{
-        setClue('Sorry! Try again')
+         const randomClue = wrongAnswers[Math.floor(Math.random() * wrongAnswers.length)];
+        setClue(randomClue)  
+        setTimeout(()=> setClue(''), 3000)
         setTimeout(()=> setFlipped([]), 1000)
       }
     }}, [flipped, cards])
@@ -50,13 +52,6 @@ const Chapter2 = () => {
       setGameSolved(true)
     }
   }, [solved, cards])
-
-  useEffect(()=>{
-    if(clue){
-      const timer = setTimeout(()=>setClue(''), 2000);
-      return () => clearTimeout(timer);
-    }
-  })
 
   return (
     <div className='bg-primary '>
@@ -88,43 +83,44 @@ const Chapter2 = () => {
       {
         introEnd && (
           <div className='flex flex-col w-full h-[1000px] m-2.5'>
-          <div className='grid grid-cols-3 gap-2 mt-8 '>
-            {cards.map( (card,index) => (
-            
-              <motion.div
-                key={index}
-                onClick={()=> handleCardClick(index)} 
-                className='relative w-[100px] h-[100px] bg-secondary rounded-lg flex items-center justify-center'
-              >
-                <div 
-                  className={`w-full h-full rounded-lg absolute flex items-center justify-center 
-                    ${flipped.includes(index) || solved.includes(index) ? 'bg-transparent' : ''}`}
+            <div className='grid grid-cols-3 gap-2 mt-8 '>
+              {cards.map( (card,index) => (
+              
+                <motion.div
+                  key={index}
+                  onClick={()=> handleCardClick(index)} 
+                  className='relative w-[100px] h-[100px] bg-secondary rounded-lg flex items-center justify-center'
                 >
-                  {flipped.includes(index) || solved.includes(card.name) ? 
-                  (
-                    <img 
-                      src={card.image} 
-                      alt={card.name} 
-                      className='w-full h-full object-cover rounded-lg'/>
-                  ) : (
-                    <div
-                      className='w-full h-full bg-secondary rounded-lg'
-                    >
-                      
-                    </div>
-                  )}
-                  
-                </div>
-              </motion.div>
-            ))}
-            
-          </div>
+                  <div 
+                    className={`w-full h-full rounded-lg absolute flex items-center justify-center 
+                      ${flipped.includes(index) || solved.includes(index) ? 'bg-transparent' : ''}`}
+                  >
+                    {flipped.includes(index) || solved.includes(card.name) ? 
+                    (
+                      <img 
+                        src={card.image} 
+                        alt={card.name} 
+                        className='w-full h-full object-cover rounded-lg'/>
+                    ) : (
+                      <div
+                        className='w-full h-full bg-secondary rounded-lg'
+                      >
+                        
+                      </div>
+                    )}
+                    
+                  </div>
+                </motion.div>
+              ))}
+              
+            </div>
   
           <div>
+          
           {
             !gameSolved && (
               <div
-              className='mt-4 text-white font-semibold text-xl'
+              className='mt-4 text-white font-semibold text-lg'
             >
               {clue}
             </div>

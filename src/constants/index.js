@@ -175,4 +175,12 @@ const audioQuestions = [
   },
 ];
 
-export { intro, chapters, chap1, chapt2images, audioQuestions };
+const wrongAnswers = [
+  "Dope effort, but not quite!! Try again",
+  "Not quite there yet! Keep going!",
+  "So close! Try again!",
+  "Blood, Sweat & Tears won’t let you give up! Try again!",
+  "You got Permission to Dance... but not for this answer! Try again!",
+];
+
+export { intro, chapters, chap1, chapt2images, audioQuestions, wrongAnswers };
