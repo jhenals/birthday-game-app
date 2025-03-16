@@ -21,6 +21,7 @@ module.exports = {
       },
       backgroundImage: {
         starting_page: "url('/src/assets/bg_1.png')",
+        chapterBg: "url('/src/assets/chpater-bg')",
       },
     },
   },

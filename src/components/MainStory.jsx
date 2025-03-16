@@ -36,6 +36,12 @@ const MainStory = () => {
 			>
 				{intro[index]}
 
+				<div 
+					className="w-full h-full flex flex-col items-center justify-center"
+					style={{ display: index===2 ? "block": "none"}}>
+					 <img src="src/assets/nykss/nyk1.png" alt="nyka" />
+				</div>
+
 				
 			</motion.div>
 
