@@ -1,5 +1,6 @@
 import bg_1 from "./bg_1.png";
 import bg_2 from "./bg_2.png";
+import bg_3 from "./bg-3.png";
 import borderbottom from "./border-bottom.png";
 import bordertop from "./border-top.png";
 import videoGift from "./videoGift.mp4";
@@ -12,6 +13,7 @@ import { dynamite, springDay, lifeGoesOn } from "./vidAudClips/index.js";
 export {
   bg_1,
   bg_2,
+  bg_3,
   logo,
   jin,
   jk1,
@@ -24,5 +26,5 @@ export {
   videoGift,
   borderbottom,
   bordertop,
-  nyka
+  nyka,
 };
