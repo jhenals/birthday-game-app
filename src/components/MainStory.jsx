@@ -30,14 +30,30 @@ const MainStory = () => {
      	)}
 
 		<div className=" z-2 w-full h-full flex flex-col">
+
+			
 			<motion.div
 				key= {index}
 				className="w-full h-full flex flex-wrap !text-[30px]  text-white font-bold text-center items-center justify-center"
 			>
+					<div 
+					className="w-full h-auto"
+					style={{ display: index===4 ? "block": "none"}}>
+					 <img className="h-[auto] " src="src/assets/border-top.png" alt="border-top" />
+				</div>
+
+
 				{intro[index]}
 
 				<div 
-					className="w-full h-full flex flex-col items-center justify-center"
+					className="w-full h-auto"
+					style={{ display: index===4 ? "block": "none"}}>
+					 <img src="src/assets/border-bottom.png" alt="nyka" />
+				</div>
+
+
+				<div 
+					className="w-full h-full"
 					style={{ display: index===2 ? "block": "none"}}>
 					 <img src="src/assets/nykss/nyk1.png" alt="nyka" />
 				</div>

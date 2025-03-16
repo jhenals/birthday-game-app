@@ -1,4 +1,14 @@
-import { logo, jin, jk1, jk2, koya, purple } from "../assets";
+import {
+  logo,
+  jin,
+  jk1,
+  jk2,
+  koya,
+  purple,
+  dynamite,
+  springDay,
+  lifeGoesOn,
+} from "../assets";
 
 const intro = [
   "🎉 DUN... DUN... DUN...",
@@ -149,17 +159,17 @@ const chapt2images = [
 
 const audioQuestions = [
   {
-    audioClip: "",
+    audioClip: dynamite,
     correct: "Dynamite",
     options: ["Idol", "Butter", "Blood Sweat & Tears", "Dynamite"],
   },
   {
-    audioClip: "",
+    audioClip: springDay,
     correct: "Spring Day",
     options: ["Boy With Luv", "Spring Day", "Fake Love", "Coffee"],
   },
   {
-    audioClip: "",
+    audioClip: lifeGoesOn,
     correct: "Life Goes On",
     options: ["Life Goes On", "Save Me", "Mic Drop", "Not Today"],
   },
