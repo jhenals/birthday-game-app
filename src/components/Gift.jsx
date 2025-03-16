@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { motion } from 'framer-motion'
-import { videoGift, bg_3} from '../assets/index.js'
+import { videoGift,} from '../assets/index.js'
 
 const Gift = () => {
   return (

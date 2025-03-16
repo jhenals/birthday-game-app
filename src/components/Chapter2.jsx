@@ -55,7 +55,7 @@ const Chapter2 = () => {
 
   return (
     <div className='bg-primary '>
-
+      <div className={`${styles.mobile}`}>
       {
         !introEnd && (
           <motion.div
@@ -82,10 +82,9 @@ const Chapter2 = () => {
 
       {
         introEnd && (
-          <div className='flex flex-col w-full h-[1000px] m-2.5'>
-            <div className='grid grid-cols-3 gap-2 mt-8 '>
+          <div className='flex flex-col w-[390px] h-[1000px]'>
+            <div className='grid grid-cols-3 mt-8 w-[350px] gap-2'>
               {cards.map( (card,index) => (
-              
                 <motion.div
                   key={index}
                   onClick={()=> handleCardClick(index)} 
@@ -111,19 +110,19 @@ const Chapter2 = () => {
                     
                   </div>
                 </motion.div>
-              ))}
-              
-            </div>
-  
+              ))} 
+            </div>            
           <div>
-          
+
           {
             !gameSolved && (
-              <div
-              className='mt-4 text-white font-semibold text-lg'
-            >
-              {clue}
-            </div>
+              <div className="w-full h-auto">
+                <p
+                  className="text-white text-sm w-[390px] pr-5"
+                >
+                  {clue}
+                </p>
+              </div>
             )
           }
   
@@ -139,7 +138,7 @@ const Chapter2 = () => {
               
             </div>
              
-          )
+            )
           }
   
             
@@ -151,6 +150,8 @@ const Chapter2 = () => {
       }
     
     
+        
+      </div>
     </div>
   )
 }
