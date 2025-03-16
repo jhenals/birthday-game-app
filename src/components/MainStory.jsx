@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion'
 
 import { styles } from "../styles";
+import { bordertop, borderbottom, nyka } from "../assets";
 import { intro } from "../constants";	
 
 
@@ -39,7 +40,7 @@ const MainStory = () => {
 					<div 
 					className="w-full h-auto"
 					style={{ display: index===4 ? "block": "none"}}>
-					 <img className="h-[auto] " src="src/assets/border-top.png" alt="border-top" />
+					 <img className="h-[auto] " src={bordertop} alt="border-top" />
 				</div>
 
 
@@ -48,14 +49,14 @@ const MainStory = () => {
 				<div 
 					className="w-full h-auto"
 					style={{ display: index===4 ? "block": "none"}}>
-					 <img src="src/assets/border-bottom.png" alt="nyka" />
+					 <img src={borderbottom} alt="border-bottom" />
 				</div>
 
 
 				<div 
 					className="w-full h-full"
 					style={{ display: index===2 ? "block": "none"}}>
-					 <img src="src/assets/nykss/nyk1.png" alt="nyka" />
+					 <img src={nyka} alt="nyka" />
 				</div>
 
 				
