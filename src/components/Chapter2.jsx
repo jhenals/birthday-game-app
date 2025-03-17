@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles'
+import {Fire} from '../assets'
 import { chapt2images , wrongAnswers} from '../constants'
 
 const shuffleArray = (array) => {
@@ -16,12 +17,29 @@ const shuffleArray = (array) => {
 
 const Chapter2 = () => {
   const navigate = useNavigate();
+    const audioRef = useRef(null)
+  
+  
   const [introEnd, setIntroEnd] = useState(false)
   const[cards, setCards]= useState(shuffleArray(chapt2images))
   const [ flipped, setFlipped]= useState([])
   const [solved, setSolved]= useState([])
   const [clue, setClue]= useState('')  
   const [gameSolved, setGameSolved]= useState(false)
+
+   useEffect(()=>{
+      if(audioRef.current){
+        audioRef.current.play().catch((error)=>
+          console.log('Audio autoplay prevented:', error));
+      }
+      return ()=>{
+        if(audioRef.current){
+          audioRef.current.pause()
+          audioRef.current.currentTime = 0;
+        }
+      };
+    },[]);
+
 
   const handleCardClick= (index)=>{
     if( flipped.length <2 && 
@@ -54,7 +72,10 @@ const Chapter2 = () => {
   }, [solved, cards])
 
   return (
+    <>
     <div className='bg-primary '>
+      <audio ref={audioRef} src={Fire} />
+      
       <div className={`${styles.mobile}`}>
       {
         !introEnd && (
@@ -153,6 +174,7 @@ const Chapter2 = () => {
         
       </div>
     </div>
+    </>
   )
 }
 

@@ -5,6 +5,9 @@ import borderbottom from "./border-bottom.png";
 import bordertop from "./border-top.png";
 import videoGift from "./videoGift.mp4";
 import nyka from "./nykss/nyk1.png";
+import RunBTS from "./audioclips/RunBTS.mp3";
+import Butter from "./audioclips/Butter.mp3";
+import Fire from "./audioclips/Fire.mp3";
 
 import { logo, jin, jk1, jk2, koya, purple } from "./chapt2/index.js";
 
@@ -27,4 +30,7 @@ export {
   borderbottom,
   bordertop,
   nyka,
+  RunBTS,
+  Butter,
+  Fire,
 };

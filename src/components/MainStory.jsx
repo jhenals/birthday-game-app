@@ -1,17 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion'
 
 import { styles } from "../styles";
-import { bordertop, borderbottom, nyka } from "../assets";
+import { bordertop, borderbottom, nyka, Butter } from "../assets";
 import { intro } from "../constants";	
 
 
 const MainStory = () => {
 	const navigate = useNavigate();	
+	const audioRef = useRef(null)
 
 	const [isVisible, setIsVisible]= useState(true)
   const [index, setIndex] = useState(0);
+
+	const startAudio = () => {
+    if (audioRef.current) {
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            console.log("Audio is playing");
+            setIsPlaying(true);
+          })
+          .catch((error) => console.log("Autoplay prevented:", error));
+      }
+    }
+  };
+
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(false), 3000); // 3s duration
@@ -21,6 +37,10 @@ const MainStory = () => {
 
   return (
     <div className={`${styles.padding} bg-primary relative `}>
+			<audio ref={audioRef} src={Butter} loop 
+			onCanPlayThrough={() => console.log("Audio loaded")}
+			/>
+			
       {isVisible && (
 			<motion.div
 			className="absolute inset-0 bg-black z-10"
@@ -73,7 +93,11 @@ const MainStory = () => {
 					</button>
 	
 					<button
-						onClick={ ()=> setIndex( (prev) => Math.min(prev+1, intro.length-1))}
+						onClick={ ()=> {
+							setIndex( (prev) => Math.min(prev+1, intro.length-1));
+							if(index === 0) startAudio();
+						}
+						}
 						disabled={index === intro.length-1}
 						className="bg-secondary text-white h-full w-full rounded-2xl disabled:opacity-50"
 					>

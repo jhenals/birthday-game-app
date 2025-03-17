@@ -1,12 +1,14 @@
-import React ,{useState} from 'react'
+import React ,{useState, useRef, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
 import { styles } from '../styles'
 import {chap1, wrongAnswers} from '../constants'
+import { RunBTS } from '../assets'
 
 const Chapter1 = () => {
   const navigate = useNavigate();
+  const audioRef = useRef(null)
 
   const [index, setIndex] = useState(0);
   const [chapterEnd, setChapterEnd] = useState(false);
@@ -14,6 +16,18 @@ const Chapter1 = () => {
   const [clue, setClue]= useState('')  
   const [isCorrect, setIsCorrect] = useState(false) 
   
+  useEffect(()=>{
+    if(audioRef.current){
+      audioRef.current.play().catch((error)=>
+        console.log('Audio autoplay prevented:', error));
+    }
+    return ()=>{
+      if(audioRef.current){
+        audioRef.current.pause()
+        audioRef.current.currentTime = 0;
+      }
+    };
+  },[]);
 
   const handleAnswer = (option) => {
     if(chap1[index].correct === option){
@@ -35,6 +49,8 @@ const Chapter1 = () => {
 
   return (
     <div className={`bg-primary relative h-full `}>
+      <audio ref={audioRef} src={RunBTS} />
+      
       <div className={`${styles.mobile}`}>
         {
           !introEnd && (
