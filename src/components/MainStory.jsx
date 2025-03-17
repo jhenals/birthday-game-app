@@ -36,91 +36,97 @@ const MainStory = () => {
 
 
   return (
-    <div className={`${styles.padding} bg-primary relative `}>
-			<audio ref={audioRef} src={Butter} loop 
-			onCanPlayThrough={() => console.log("Audio loaded")}
-			/>
-			
-      {isVisible && (
-			<motion.div
-			className="absolute inset-0 bg-black z-10"
-			initial={{ opacity: 1 }}
-			animate={{ opacity: 0 }}
-			transition={{ duration: 3 }}
-			/> 
-     	)}
-
-		<div className=" z-2 w-full h-full flex flex-col">
-
-			
-			<motion.div
-				key= {index}
-				className="w-full h-full flex flex-wrap !text-[30px]  text-white font-bold text-center items-center justify-center"
-			>
-					<div 
-					className="w-full h-auto"
-					style={{ display: index===4 ? "block": "none"}}>
-					 <img className="h-[auto] " src={bordertop} alt="border-top" />
-				</div>
-
-
-				{intro[index]}
-
-				<div 
-					className="w-full h-auto"
-					style={{ display: index===4 ? "block": "none"}}>
-					 <img src={borderbottom} alt="border-bottom" />
-				</div>
-
-
-				<div 
-					className="w-full h-full"
-					style={{ display: index===2 ? "block": "none"}}>
-					 <img src={nyka} alt="nyka" />
-				</div>
-
+		<div className={`bg-primary relative h-full `}>
+				<audio ref={audioRef} src={Butter} loop 
+				onCanPlayThrough={() => console.log("Audio loaded")}
+				/>
+				<div className={`${styles.mobile}`}>
 				
-			</motion.div>
+					{isVisible && (
+					<motion.div
+					className="absolute inset-0 bg-black z-10"
+					initial={{ opacity: 1 }}
+					animate={{ opacity: 0 }}
+					transition={{ duration: 3 }}
+					/> 
+					)}
 
-			{ index<intro.length-1 && (
-					<div className=" h-[100px] w-full flex flex-row gap-4 pt-4 ">
-					<button
-						onClick={ ()=> setIndex( (prev) => Math.max(prev-1, 0))}
-						disabled={index === 1}
-						className="bg-secondary text-white w-full h-full rounded-2xl disabled:opacity-50 "  
-						>
-							Back
-					</button>
-	
-					<button
-						onClick={ ()=> {
-							setIndex( (prev) => Math.min(prev+1, intro.length-1));
-							if(index === 0) startAudio();
-						}
-						}
-						disabled={index === intro.length-1}
-						className="bg-secondary text-white h-full w-full rounded-2xl disabled:opacity-50"
+					<div className=" z-2 w-full h-full flex flex-col">
+
+					
+					<motion.div
+						key= {index}
+						className="w-full h-[3000px] flex flex-wrap !text-[30px]  text-white font-bold text-center items-center justify-center relative"
 					>
-						Next
+							<div 
+							className="w-full h-auto"
+							style={{ display: index===4 ? "block": "none"}}>
+							<img className="h-[auto] " src={bordertop} alt="border-top" />
+						</div>
 
-					</button>
-				 </div>
-				)
-			}
 
-			{index===intro.length-1 && (
-				<div className="w-full h-full flex flex-col justify-center items-center">
-				<button
-					onClick={ ()=> navigate('/chapter-one')}
-					className="bg-secondary text-white w-1/2 h-1/4 rounded-2xl"
-				>
-					Start the Adventure!
-				</button>
+						{intro[index]}
+
+						<div 
+							className="w-full h-auto"
+							style={{ display: index===4 ? "block": "none"}}>
+							<img src={borderbottom} alt="border-bottom" />
+						</div>
+
+
+						<div 
+							className="w-full h-auto"
+							style={{ display: index===2 ? "block": "none"}}>
+							<img src={nyka} alt="nyka" />
+						</div>
+
+						
+					</motion.div>
+
+					<div className="w-full h-full mb-10">
+					{ index<intro.length-1 && (
+								<div className=" h-[100px] w-full flex flex-row gap-4 pt-4 ">
+								<button
+									onClick={ ()=> setIndex( (prev) => Math.max(prev-1, 0))}
+									disabled={index === 1}
+									className="bg-secondary text-white w-full h-full rounded-2xl disabled:opacity-50 "  
+									>
+										Back
+								</button>
+				
+								<button
+									onClick={ ()=> {
+										setIndex( (prev) => Math.min(prev+1, intro.length-1));
+										if(index === 0) startAudio();
+									}
+									}
+									disabled={index === intro.length-1}
+									className="bg-secondary text-white h-full w-full rounded-2xl disabled:opacity-50"
+								>
+									Next
+
+								</button>
+							</div>
+							)
+						}
+						
+					</div>
+					
+
+					{index===intro.length-1 && (
+						<div className="w-full h-full flex flex-col justify-center items-center">
+						<button
+							onClick={ ()=> navigate('/chapter-one')}
+							className="bg-secondary text-white w-1/2 h-1/4 rounded-2xl"
+						>
+							Start the Adventure!
+						</button>
+					</div>
+					)
+
+					}
+					</div>  
 			</div>
-			)
-
-			}
-    </div>  
   	</div>
   )
 }
